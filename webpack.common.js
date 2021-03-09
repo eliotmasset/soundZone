@@ -9,7 +9,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
     new HtmlWebpackPlugin({
-        title: 'React',
+        title: 'SoundZone',
     }),
     new MiniCssExtractPlugin(),
   ],
