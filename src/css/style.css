@@ -19,6 +19,8 @@ body{
     flex-wrap: wrap;
     justify-content: stretch;
     width:75%;
+    height: 600px;
+    overflow-y: scroll;
     box-shadow: 0 0 10px skyblue;
 }
 .Radio
@@ -39,7 +41,7 @@ h1{
     text-align: center;
     font-size: 6vw;
     font-weight: 600;
-    margin: 8vw auto 5vw auto;
+    margin: 4vw auto 4vw auto;
     display: inline-block;
 }
 h3

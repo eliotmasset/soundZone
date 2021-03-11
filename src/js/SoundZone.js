@@ -11,14 +11,14 @@ class SoundZone extends React.Component {
     return (
       <div className="SoundZone">
           <header>
-            <h1>SoundZone</h1>
+            <h1>SoundZone 📻</h1>
           </header>
           <content>
             <Radios />
           </content>
           <footer>
               <p>
-                  @Eliot Masset - IUT d'Aix-Marseille, Dpt Informatique, M4103CIP
+                © 2021 - Eliot MASSET & Lucas POLLET
               </p>
           </footer>
       </div>
