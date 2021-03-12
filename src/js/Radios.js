@@ -19,13 +19,16 @@ class Radios extends React.Component {
   }
 
   updateCurrent(key) {
+    <div key={key} className="selected"></div>
+
     this.setState({current_radio: key});
   }
 
   render() {
     var img=undefined;
-    if(this.state.list[this.state.current_radio]!=undefined)
-    {var img=this.images[this.state.list[this.state.current_radio].img];}
+    if(this.state.list[this.state.current_radio]!=undefined) {
+      var img=this.images[this.state.list[this.state.current_radio].img];
+    }
     return (
       <div id="Radios">
       <RadioPanel img={img} radio={this.state.list[this.state.current_radio]} />
@@ -34,7 +37,7 @@ class Radios extends React.Component {
             const radios = [];
             this.images = this.importAll(require.context('../img', false, /\.(png|jpe?g|svg)$/));
             Object.keys(this.state.list).forEach((key) => {
-                radios.push(<Radio img={this.images[this.state.list[key].img]} key={key} value={this.state.list[key]} onClick={() => this.updateCurrent(key)} />);
+                radios.push(<Radio img={this.images[this.state.list[key].img]} key={key} selected={false} value={this.state.list[key]} onClick={() => this.updateCurrent(key)} />);
             });
             return radios;
             })()}
