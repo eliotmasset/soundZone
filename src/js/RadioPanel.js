@@ -33,6 +33,9 @@ class RadioPanel extends React.Component {
   render() {
     if(this.props.radio==undefined)
     {
+        this.last=null;
+        if(document.getElementById("player")!=undefined)
+          document.getElementById("player").pause();
         return (
           <div id="RadioPanel">
             <audio preload="auto" controls id="player"></audio>

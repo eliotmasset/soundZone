@@ -3,6 +3,7 @@ body{
     text-align: center;
     font-family: Tahoma, Geneva, Verdana, sans-serif;
     background-image: url('../img/background.png');
+    overflow-x: hidden;
 }
 #Radios
 {
@@ -19,6 +20,7 @@ body{
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: stretch;
+    align-content: flex-start;
     width:75%;
     height: 600px;
     overflow-y: auto;
@@ -190,6 +192,8 @@ h3
     overflow: hidden;
     padding-top: 70px;
     transform:scaleY(1) !important;
+    font-size: 15px;
+    font-weight: 700;
 } 
 #tag_display {
     height: 70px;
@@ -204,18 +208,16 @@ h3
     font-size: 20px;
     font-weight: 700;
 }
-#list-tag {
+#inner_list-tag {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content:flex-start;
     align-content: flex-start;
-    height: 0;
     transform-origin:top;
     transition: all 0.3s ease-out;
     overflow:hidden;
-    transition:height 0.3s ease-out, padding 0.3s ease-out;
-    padding: 0px;
+    padding: 10px;
 }
 #tag_display:hover {
     background-color: rgb(214, 214, 214);
@@ -234,4 +236,22 @@ h3
 }
 .select_tag {
     background-color: skyblue;
+}
+
+#list-tag{
+  -moz-transition: height .5s;
+  -ms-transition: height .5s;
+  -o-transition: height .5s;
+  -webkit-transition: height .5s;
+  transition: height .5s;
+  height: 0;
+  overflow: hidden;
+  outline: 1px solid red;
+}
+
+#button_select_all_tags, #button_unselect_all_tags {
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 700;
+    display: inline-block;
 }
