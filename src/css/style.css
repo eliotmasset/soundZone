@@ -71,8 +71,13 @@ h3
     padding: .5vw 1vw;
     width:20%;
     border-radius: 5px;
-    height: 20vw;
+    height: max-content;
+    min-height: 20vw;
     display: inline-block;
+}
+#RadioPanel img
+{
+    width: 100%;
 }
 
 #player
@@ -82,14 +87,26 @@ h3
     opacity:0;
 }
 
-#play_button
+#play_button,#pause_button, #load_button
 {
     cursor: pointer;
+    width: min-content;
+    height: min-content;
+    font-size: 30px;
+}
+
+#play_button
+{
+    display:none;
 }
 #pause_button
 {
-    cursor: pointer;
     display:none;
+
+}
+#load_button
+{
+    display:inline-block;
 }
 
 .general-button
@@ -108,3 +125,55 @@ h3
     border-radius: 5px;
     box-shadow: 0 0 1px gray;
 }
+
+#track_text
+{
+    font-weight: 700;
+    font-size: 1.5vw;
+}
+
+.Radio_selected {
+    transform: scale(1.01);
+    z-index:100;
+    box-shadow: 0 0 10px skyblue;
+}
+
+#lds-facebook {
+    display: inline-block;
+    position: relative;
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+  }
+  #lds-facebook div {
+    display: inline-block;
+    position: absolute;
+    left: 3px;
+    width: 8px;
+    background: grey;
+    animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+  }
+  #lds-facebook div:nth-child(1) {
+    left: 3px;
+    animation-delay: -0.24s;
+  }
+  #lds-facebook div:nth-child(2) {
+    left: 14px;
+    animation-delay: -0.12s;
+  }
+  #lds-facebook div:nth-child(3) {
+    left: 25px;
+    animation-delay: 0;
+  }
+  @keyframes lds-facebook {
+    0% {
+      top: 3px;
+      height: 28px;
+    }
+    50%, 100% {
+      top: 10px;
+      height: 28px;
+    }
+  }
+  

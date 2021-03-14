@@ -19,8 +19,6 @@ class Radios extends React.Component {
   }
 
   updateCurrent(key) {
-    <div key={key} className="selected"></div>
-
     this.setState({current_radio: key});
   }
 
@@ -37,7 +35,7 @@ class Radios extends React.Component {
             const radios = [];
             this.images = this.importAll(require.context('../img', false, /\.(png|jpe?g|svg)$/));
             Object.keys(this.state.list).forEach((key) => {
-                radios.push(<Radio img={this.images[this.state.list[key].img]} key={key} selected={false} value={this.state.list[key]} onClick={() => this.updateCurrent(key)} />);
+                radios.push(<Radio img={this.images[this.state.list[key].img]} key={key} data_key={key} selected={this.state.current_radio} value={this.state.list[key]} onClick={() => this.updateCurrent(key)} />);
             });
             return radios;
             })()}

@@ -7,11 +7,11 @@ class Radio extends React.Component {
   }
 
   render() {
-    let selected=this.props.selected ? "selected" : "";
-    let classes = 'Radio '+selected;
+    let selected=this.props.selected==this.props.data_key ? "Radio_selected" : "";
+    let classe = 'Radio '+selected;
     
     return (
-    <div onClick={this.props.onClick} className={classes}>
+    <div onClick={this.props.onClick} className={classe}>
             <img src={this.props.img} id={this.props.value.name}></img>
             <h3>{this.props.value.name}</h3>
     </div>
