@@ -1,5 +1,6 @@
 import React from 'react';
 import {Radios} from './Radios.js';
+import {Tags} from './Tags.js';
 class SoundZone extends React.Component {
   constructor(props) {
     super(props);
@@ -14,6 +15,7 @@ class SoundZone extends React.Component {
             <h1>SoundZone 📻</h1>
           </header>
           <content>
+            <Tags />
             <Radios />
           </content>
           <footer>
