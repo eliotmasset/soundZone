@@ -137,6 +137,7 @@ h3
 .Radio_selected {
     transform: scale(1.01);
     z-index:100;
+    background-color: skyblue;
     box-shadow: 0 0 10px skyblue;
 }
 

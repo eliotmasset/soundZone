@@ -2,6 +2,7 @@ import React from 'react';
 import { radios } from './radios-big.mjs';
 import {Radios} from './Radios.js';
 import {Tags} from './Tags.js';
+
 class SoundZone extends React.Component {
   constructor(props) {
     super(props);
@@ -10,10 +11,13 @@ class SoundZone extends React.Component {
         for(let tag of radio.tags)
             if(tags.indexOf(tag)==-1)
                 tags.push(tag);
+
+    tags.sort();
+
     this.state = {
       tags: tags,
       select_tags: tags,
-      current_radio: null,
+      current_radio: null
     };
   }
   
@@ -28,7 +32,6 @@ class SoundZone extends React.Component {
     return contain;
   }
 
-  
   updateCurrent(key) {
     this.setState({current_radio: key});
   }
@@ -57,10 +60,10 @@ class SoundZone extends React.Component {
           <header>
             <h1>SoundZone 📻</h1>
           </header>
-          <content>
-            <Tags tags={this.state.tags} select_tags={this.state.select_tags} update_select={(tag,new_value) => this.update_select(tag,new_value)} select_all={() => this.select_all()} unselect_all={() => this.unselect_all()}/>
-            <Radios current_radio={this.state.current_radio} updateCurrent={(key) => this.updateCurrent(key)} select_tags={this.state.select_tags} />
-          </content>
+          
+          <Tags tags={this.state.tags} select_tags={this.state.select_tags} update_select={(tag,new_value) => this.update_select(tag,new_value)} select_all={() => this.select_all()} unselect_all={() => this.unselect_all()}/>
+          <Radios current_radio={this.state.current_radio} updateCurrent={(key) => this.updateCurrent(key)} select_tags={this.state.select_tags} />
+    
           <footer>
               <p>
                 © 2021 - Eliot MASSET & Lucas POLLET
