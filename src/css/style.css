@@ -1,3 +1,5 @@
+/* SoundZone CSS */ 
+/* GENERAL */ 
 body{
     margin: 0;
     text-align: center;
@@ -50,7 +52,7 @@ h1{
     text-align: center;
     font-size: 6vw;
     font-weight: 600;
-    margin: 4vw auto 4vw auto;
+    margin: 1vw auto 1vw auto;
     display: inline-block;
 }
 h3
@@ -82,6 +84,7 @@ h3
     width: 100%;
 }
 
+/* RADIO PLAYER */ 
 #player
 {
     position: absolute;
@@ -179,9 +182,8 @@ h3
       height: 28px;
     }
   }
-  
 
-
+/* TAGS */ 
 #tags {
     background-color: whitesmoke;
     border-radius: 5px;
@@ -191,21 +193,21 @@ h3
     margin-bottom: 20px;
     border: 1px solid rgb(214, 214, 214);
     overflow: hidden;
-    padding-top: 70px;
+    padding-top: 50px;
     transform:scaleY(1) !important;
     font-size: 15px;
     font-weight: 700;
 } 
 #tag_display {
-    height: 70px;
+    height: 60px;
     width: calc(100%+20px);
-    transform: translateX(-10px) translateY(-70px);
+    transform: translateX(-10px) translateY(-60px);
     margin: 0 auto;
     border-radius: 5px 5px 0 0;
     position: absolute;
     background-color: whitesmoke;
     vertical-align:middle;
-    line-height: 70px;
+    line-height: 60px;
     font-size: 20px;
     font-weight: 700;
 }
@@ -223,7 +225,7 @@ h3
 #tag_display:hover {
     background-color: rgb(214, 214, 214);
     border: 1px solid rgb(214, 214, 214);
-    transform: translateX(-11px) translateY(-71px);
+    transform: translateX(-11px) translateY(-61px);
     cursor: pointer;
 }
 .tag  {
@@ -231,7 +233,7 @@ h3
     width: max-content;
     height: max-content;
     padding: 2px;
-    margin: 2px;
+    margin: 5px;
     border: 2px solid skyblue;
     cursor: pointer;
 }
