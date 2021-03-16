@@ -1,5 +1,8 @@
 /* SoundZone CSS */ 
 /* GENERAL */ 
+* {
+    margin:0;
+}
 body{
     margin: 0;
     text-align: center;
@@ -10,7 +13,7 @@ body{
 #Radios
 {
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
     width: 80vw;
@@ -279,6 +282,10 @@ h3
   background-color: aliceblue;
 }
 
+#right_side > p {
+    transform: translateY(-1vw);
+}
+
 .fa-search {
     float: left;
     cursor: pointer;
@@ -302,7 +309,7 @@ h3
     
     #Radios
     {
-        flex-direction: column;
+        flex-direction: column-reverse;
     }
     #Radios > *
     {

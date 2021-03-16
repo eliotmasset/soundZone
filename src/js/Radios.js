@@ -47,20 +47,20 @@ class Radios extends React.Component {
     }
     return (
         <div id="Radios">
-        <div id="right_side">
-            <SearchBar change={(value) => this.setState({content:value})}/>
-            <RadioPanel image={img} radio={this.state.list[this.state.current_radio]} />
-        </div>
-        <div id="radio-list">
-        {(() => {
-            Object.keys(this.state.list).forEach((key) => {
-            if(this.contain(key) && this.state.list[key].name.toLowerCase().indexOf(this.state.content.toLowerCase())!=-1)
-                radios.push(<Radio image={this.state.list[key].img} key={key} data_key={key} selected={this.state.current_radio} value={this.state.list[key]} onClick={() => this.updateCurrent(key)} />);
-            });
-            return radios;
-        })()}
-        </div>
-        <Nb_radios nb_radios={radios.length} />
+            <div id="radio-list">
+            {(() => {
+                Object.keys(this.state.list).forEach((key) => {
+                if(this.contain(key) && this.state.list[key].name.toLowerCase().indexOf(this.state.content.toLowerCase())!=-1)
+                    radios.push(<Radio image={this.state.list[key].img} key={key} data_key={key} selected={this.state.current_radio} value={this.state.list[key]} onClick={() => this.updateCurrent(key)} />);
+                });
+                return radios;
+            })()}
+            </div>
+            <div id="right_side">
+                <SearchBar change={(value) => this.setState({content:value})}/>
+                <Nb_radios nb_radios={radios.length} />
+                <RadioPanel image={img} radio={this.state.list[this.state.current_radio]} />
+            </div>
       </div>
     );
   }
