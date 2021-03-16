@@ -16,8 +16,7 @@ class SoundZone extends React.Component {
 
     this.state = {
       tags: tags,
-      select_tags: tags,
-      current_radio: null
+      select_tags: tags
     };
   }
   
@@ -32,18 +31,12 @@ class SoundZone extends React.Component {
     return contain;
   }
 
-  updateCurrent(key) {
-    this.setState({current_radio: key});
-  }
-
   update_select(tag,new_value) {
     let tag_value=this.state.tags[tag];
     if(new_value)
       this.setState({select_tags: [...this.state.select_tags, tag_value]});
-    else if(this.contain(this.state.current_radio,tag_value))
-      this.setState({select_tags: this.state.select_tags.filter(_tag => _tag != tag_value)});
     else
-      this.setState({select_tags: this.state.select_tags.filter(_tag => _tag != tag_value),current_radio:null});
+      this.setState({select_tags: this.state.select_tags.filter(_tag => _tag != tag_value)});
   }
 
   select_all() {
@@ -51,7 +44,7 @@ class SoundZone extends React.Component {
   }
 
   unselect_all() {
-    this.setState({select_tags:[],current_radio:null});
+    this.setState({select_tags:[]});
   }
 
   render() {
@@ -62,7 +55,7 @@ class SoundZone extends React.Component {
           </header>
           
           <Tags tags={this.state.tags} select_tags={this.state.select_tags} update_select={(tag,new_value) => this.update_select(tag,new_value)} select_all={() => this.select_all()} unselect_all={() => this.unselect_all()}/>
-          <Radios current_radio={this.state.current_radio} updateCurrent={(key) => this.updateCurrent(key)} select_tags={this.state.select_tags} />
+          <Radios select_tags={this.state.select_tags} />
     
           <footer>
               <p>
