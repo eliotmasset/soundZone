@@ -81,7 +81,7 @@ h3
 }
 #right_side > *
 {
-    margin-bottom: 2vh;
+    box-sizing: content-box;
 }
 #RadioPanel
 {
@@ -258,6 +258,46 @@ h3
     display: inline-block;
 }
 
+#SearchBar{
+    width: 100%;
+    display: inline-block;
+}
+
+#radio_query {
+  padding: calc(1vw);
+  padding-left: 2.7vw;
+  border-radius: 5px;
+  height: 15px;
+  font-size: 18px;
+  width: calc(100% - 1.7vw);
+  box-shadow: 0 0 2px skyblue;
+  border: none;
+}
+
+#radio_query:focus {
+  outline: none;
+  background-color: aliceblue;
+}
+
+.fa-search {
+    float: left;
+    cursor: pointer;
+    transform: translateY(-2.6vw) translateX(.4vw);
+    font-size: 2vw;
+}
+@media (max-width: 1000px) { 
+    .fa-search {
+        transform: translateY(-2.8vw) translateX(.4vw);
+    }
+}
+  
+@media (max-width: 800px) { 
+    .fa-search {
+        transform: translateY(-3vw) translateX(.4vw);
+    }
+}
+   
+
 @media (max-width: 600px) { 
     
     #Radios
@@ -268,5 +308,18 @@ h3
     {
         width: 100%;
         margin-bottom: 2vh;
+    }
+    #RadioPanel img
+    { 
+        max-height: 300px;
+    }
+    .fa-search {
+        font-size: 2.5vw;
+        transform: translateY(-3.6vw) translateX(.4vw);
+    }
+
+    #radio_query {
+      padding-left: 3.5vw;
+      width: calc(100% - 2.5vw);
     }
 }
