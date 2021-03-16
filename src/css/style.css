@@ -90,19 +90,6 @@ h3
     width: min-content;
     height: min-content;
     font-size: 30px;
-}
-
-#play_button
-{
-    display:none;
-}
-#pause_button
-{
-    display:none;
-
-}
-#load_button
-{
     display:inline-block;
 }
 

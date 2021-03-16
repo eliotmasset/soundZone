@@ -1,6 +1,4 @@
 import React from 'react';
-import { radios } from './radios-big.mjs';
-import {Radios} from './Radios.js';
 
 class Nb_radios extends React.Component {
   constructor(props) {
