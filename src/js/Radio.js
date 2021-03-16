@@ -9,10 +9,10 @@ class Radio extends React.Component {
   render() {
     let selected=this.props.selected==this.props.data_key ? "Radio_selected" : "";
     let classe = 'Radio '+selected;
-    
+    const image = require(`../img/${this.props.image}`);
     return (
     <div onClick={this.props.onClick} className={classe}>
-            <img src={this.props.img} id={this.props.value.name}></img>
+            <img src={image} id={this.props.value.name}></img>
             <h3>{this.props.value.name}</h3>
     </div>
     );

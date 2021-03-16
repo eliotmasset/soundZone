@@ -5,14 +5,16 @@ class Tags extends React.Component {
     super(props);
     this.state = {
     }
+    this.list_tag = React.createRef();
+    this.innerList = React.createRef();
+    this.buttonSelectAll = React.createRef();
   }
 
   growDiv() {
-    var growDiv = document.getElementById('list-tag');
-    if (growDiv.clientHeight) {
-      growDiv.style.height = 0;
+    if (this.list_tag.current.clientHeight) {
+        this.list_tag.current.style.height = 0;
     } else {
-      growDiv.style.height = document.getElementById('inner_list-tag').clientHeight+ document.getElementById('button_select_all_tags').clientHeight + "px";
+        this.list_tag.current.style.height = this.innerList.current.clientHeight+ this.buttonSelectAll.current.clientHeight + "px";
     }
   }
 
@@ -20,10 +22,10 @@ class Tags extends React.Component {
     return (
     <div id="tags">
         <div id="tag_display" onClick={(() => {this.growDiv();})}>Tags</div>
-        <div id="list-tag">
-            <div id="button_select_all_tags" onClick={(() => this.props.select_all())}>Select All</div> |
+        <div ref={this.list_tag} id="list-tag">
+            <div ref={this.buttonSelectAll} id="button_select_all_tags" onClick={(() => this.props.select_all())}>Select All</div> |
             <div id="button_unselect_all_tags" onClick={(() => this.props.unselect_all())}>Unselect All</div>
-          <div id="inner_list-tag">
+          <div ref={this.innerList} id="inner_list-tag">
             {(() => {
                 const tags = [];
                 this.props.tags.forEach((value, key) => {

@@ -1,6 +1,7 @@
 import React from 'react';
 import {Radio} from './Radio.js';
 import {RadioPanel} from './RadioPanel.js';
+import {SearchBar} from './Search_Bar.js';
 import { Nb_radios } from './Nb_radios.js';
 import { radios } from './radios-big.mjs';
 
@@ -41,22 +42,24 @@ class Radios extends React.Component {
     const radios = [];
     var img=undefined;
     if(this.state.list[this.state.current_radio]!=undefined) {
-      var img=this.images[this.state.list[this.state.current_radio].img];
+      var img=this.state.list[this.state.current_radio].img;
     }
     return (
         <div id="Radios">
-          <RadioPanel img={img} radio={this.state.list[this.state.current_radio]} />
-          <div id="radio-list">
-            {(() => {
-              this.images = this.importAll(require.context('../img', false, /\.(png|jpe?g|svg)$/));
-              Object.keys(this.state.list).forEach((key) => {
-                if(this.contain(key))
-                  radios.push(<Radio img={this.images[this.state.list[key].img]} key={key} data_key={key} selected={this.state.current_radio} value={this.state.list[key]} onClick={() => this.updateCurrent(key)} />);
-                });
-              return radios;
-            })()}
-          </div>
-          <Nb_radios nb_radios={radios.length} />
+        <div id="right_side">
+            <SearchBar />
+            <RadioPanel image={img} radio={this.state.list[this.state.current_radio]} />
+        </div>
+        <div id="radio-list">
+        {(() => {
+            Object.keys(this.state.list).forEach((key) => {
+            if(this.contain(key))
+                radios.push(<Radio image={this.state.list[key].img} key={key} data_key={key} selected={this.state.current_radio} value={this.state.list[key]} onClick={() => this.updateCurrent(key)} />);
+            });
+            return radios;
+        })()}
+        </div>
+        <Nb_radios nb_radios={radios.length} />
       </div>
     );
   }
