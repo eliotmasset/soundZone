@@ -7,6 +7,7 @@ class Button_panel extends React.Component {
       etat: this.props.etat,
     };
     this.last==null;
+    this.playing=false;
   }
 
   play()
@@ -28,24 +29,24 @@ class Button_panel extends React.Component {
     this.props.audio.current.load();
   }
 
-  render() {
-    if(this.last!= null && this.last!= this.props.current)
-    {
-      this.props.audio.current.addEventListener("canplaythrough", event => {
-        this.pause();
-      });
-      this.last=this.props.current;
 
+  render() {
+    if(this.last!= null && this.last != this.props.current)
+    {
+  
+      this.last=this.props.current;
       return(<div id="buttons_pan"><div id="lds-facebook"><div></div><div></div><div></div></div>
       <div onClick={() => this.reload()} id="load_button"><i className="fas fa-redo"></i></div></div>);
     }
     this.last=this.props.current;
 
-    
-    this.props.audio.current.addEventListener("canplaythrough", event => {
-      this.setState({etat: "pause"});
-      this.props.audio.current.play();
-    });
+    if(!this.playing)
+      this.props.audio.current.addEventListener("canplay",(event) => {
+        this.props.audio.current.play();
+        this.playing=true;
+        this.setState({etat: "pause"});
+        event.stopPropagation();
+      });
 
 
     if(this.state.etat=="play")
