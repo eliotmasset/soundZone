@@ -10,8 +10,7 @@ class Tags extends React.Component {
     this.list_tag = React.createRef();
     this.innerList = React.createRef();
     this.buttonSelectAll = React.createRef();
-    this.search = React.createRef();
-    this.firstTime=true;
+    this.lastContent="";
   }
 
   growDiv(isclick) {
@@ -23,7 +22,6 @@ class Tags extends React.Component {
   }
 
   componentDidUpdate() {
-    console.log(this.lastContent!=this.state.content);
     if(this.lastContent!=this.state.content)
       this.growDiv(false)
     this.lastContent=this.state.content;
@@ -32,7 +30,7 @@ class Tags extends React.Component {
   render() {
     return (
     <div id="tags">
-        <div id="tag_display" onClick={() => {this.growDiv(true);}}>Tags</div>
+        <div id="tag_display" onClick={() => this.growDiv(true)}>Tags</div>
         <div ref={this.list_tag} id="list-tag">
             <div ref={this.buttonSelectAll} id="button_select_all_tags" onClick={(() => this.props.select_all())}>Select All</div> |
             <div id="button_unselect_all_tags" onClick={(() => this.props.unselect_all())}>Unselect All</div>

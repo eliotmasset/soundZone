@@ -6,17 +6,44 @@ class RadioPanel extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      etat: 'waiter',
     };
     this.audio = React.createRef();
-    this.button_pan = React.createRef();
     this.volume = React.createRef();
+  }
+
+  play()
+  {
+    this.setState({etat: "play"});
+    this.audio.current.pause();
+  }
+
+  pause()
+  {
+    this.setState({etat: "pause"});
+    this.audio.current.play();
+  }
+  
+  reload()
+  {
+    this.audio.current.play();
+    this.setState({etat: "waiter"});
+    this.audio.current.load();
   }
 
   changeVolume() {
     this.audio.current.volume=this.volume.current.value/100;
   }
 
-  render() {
+  onPlay(event)
+  {
+      this.audio.current.play();
+      this.setState({etat: "pause"});
+      event.stopPropagation();
+  }
+
+  render()
+  {
     if(this.props.radio==undefined)
     {
         return (
@@ -30,10 +57,10 @@ class RadioPanel extends React.Component {
 
     return (
       <div id="RadioPanel">
-            <audio ref={this.audio} preload="auto" id="player" src={this.props.radio.url}></audio>
+            <audio ref={this.audio} onCanPlay={(event)=>this.onPlay(event)} preload="auto" id="player" src={this.props.radio.url}></audio>
             <img src={image} id={this.props.radio.name}></img>
             <h4>{this.props.radio.name}</h4>
-            <Button_panel favs={this.props.favs} update_fav={() => this.props.update_fav()} current={this.props.radio} ref={this.button_pan} audio={this.audio} etat={"waiter"} />
+            <Button_panel play={()=>this.play()} pause={()=>this.pause()} reload={()=>this.reload()} etat={this.state.etat} favs={this.props.favs} update_fav={() => this.props.update_fav()} current={this.props.radio} audio={this.audio} />
             <input ref={this.volume} onChange={() => this.changeVolume()} type="range" id="volume" defaultValue={this.audio.current.volume*100} name="volume" min="0" max="100"></input>
             {this.props.radio.tags.map((item) => <div key={item} className="box-tag">{item}</div>)}
       </div>
