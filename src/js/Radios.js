@@ -12,6 +12,7 @@ class Radios extends React.Component {
         list: radios.list,
         current_radio: null,
         content: "",
+        select_favs: false,
     };
     this.images = null;
   }
@@ -23,8 +24,11 @@ class Radios extends React.Component {
   }
 
   updateCurrent(key) {
-      console.log("update !");
     this.setState({current_radio: key});
+  }
+
+  select_favs() {
+    this.setState({select_favs: !this.state.select_favs});
   }
 
 
@@ -45,12 +49,20 @@ class Radios extends React.Component {
     if(this.state.list[this.state.current_radio]!=undefined) {
       var img=this.state.list[this.state.current_radio].img;
     }
+    var fav_button =<div onClick={() => this.select_favs()} id="fav_button"><i className="far fa-heart"></i></div>;
+
+    if(this.state.select_favs)
+      var fav_button =<div onClick={() => this.select_favs()} id="fav_button"><i className="fas fa-heart"></i></div>;
+    
     return (
         <div id="Radios">
             <div id="radio-list">
             {(() => {
                 Object.keys(this.state.list).forEach((key) => {
                 if(this.contain(key) && this.state.list[key].name.toLowerCase().indexOf(this.state.content.toLowerCase())!=-1)
+                  if(this.state.select_favs && this.props.favs.indexOf(this.state.list[key])!=-1)
+                    radios.push(<Radio image={this.state.list[key].img} key={key} data_key={key} selected={this.state.current_radio} value={this.state.list[key]} onClick={() => this.updateCurrent(key)} />);
+                  else if(!this.state.select_favs)
                     radios.push(<Radio image={this.state.list[key].img} key={key} data_key={key} selected={this.state.current_radio} value={this.state.list[key]} onClick={() => this.updateCurrent(key)} />);
                 });
                 return radios;
@@ -58,8 +70,11 @@ class Radios extends React.Component {
             </div>
             <div id="right_side">
                 <SearchBar change={(value) => this.setState({content:value})}/>
-                <Nb_radios nb_radios={radios.length} />
-                <RadioPanel image={img} radio={this.state.list[this.state.current_radio]} />
+                <div className="row_flex" >
+                  <Nb_radios nb_radios={radios.length} />
+                  {fav_button}
+                </div>
+                <RadioPanel favs={this.props.favs} update_fav={() => this.props.update_fav(this.state.list[this.state.current_radio])} image={img} radio={this.state.list[this.state.current_radio]} />
             </div>
       </div>
     );

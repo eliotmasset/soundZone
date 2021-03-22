@@ -16,7 +16,8 @@ class SoundZone extends React.Component {
 
     this.state = {
       tags: tags,
-      select_tags: tags
+      select_tags: tags,
+      favs: [],
     };
   }
   
@@ -47,6 +48,13 @@ class SoundZone extends React.Component {
     this.setState({select_tags:[]});
   }
 
+  update_fav(fav) {
+    if(this.state.favs.indexOf(fav)==-1)
+      this.setState({favs: [...this.state.favs, fav]});
+    else
+      this.setState({favs: this.state.favs.filter(_fav => _fav != fav)});
+  }
+
   render() {
     return (
       <div className="SoundZone">
@@ -55,7 +63,7 @@ class SoundZone extends React.Component {
           </header>
           
           <Tags tags={this.state.tags} select_tags={this.state.select_tags} update_select={(tag,new_value) => this.update_select(tag,new_value)} select_all={() => this.select_all()} unselect_all={() => this.unselect_all()}/>
-          <Radios select_tags={this.state.select_tags} />
+          <Radios select_tags={this.state.select_tags} favs={this.state.favs} update_fav={(fav) => this.update_fav(fav)} />
     
           <footer>
               <p>

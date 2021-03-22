@@ -33,7 +33,7 @@ class RadioPanel extends React.Component {
             <audio ref={this.audio} preload="auto" id="player" src={this.props.radio.url}></audio>
             <img src={image} id={this.props.radio.name}></img>
             <h4>{this.props.radio.name}</h4>
-            <Button_panel current={this.props.radio} ref={this.button_pan} audio={this.audio} etat={"waiter"} />
+            <Button_panel favs={this.props.favs} update_fav={() => this.props.update_fav()} current={this.props.radio} ref={this.button_pan} audio={this.audio} etat={"waiter"} />
             <input ref={this.volume} onChange={() => this.changeVolume()} type="range" id="volume" defaultValue={this.audio.current.volume*100} name="volume" min="0" max="100"></input>
             {this.props.radio.tags.map((item) => <div key={item} className="box-tag">{item}</div>)}
       </div>

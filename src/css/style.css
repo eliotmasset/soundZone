@@ -100,21 +100,43 @@ h3
     display: inline-block;
 }
 #buttons_pan {
-    
+    text-align: center;
+    width: 80%;
+    margin-left: 10%;
+    display: flex;
+    justify-content: space-evenly;
 }
 #RadioPanel img
 {
     width: 100%;
     max-height: 150px;
 }
+.row_flex
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.row_flex p
+{
+    width: max-content;
+    height: max-content;
+}
 
-#play_button,#pause_button, #load_button
+#play_button,#pause_button, #load_button, #fav_button
 {
     cursor: pointer;
     width: min-content;
     height: min-content;
     font-size: 30px;
     display:inline-block;
+}
+
+#fav_button
+{
+    color:rgb(227, 150, 255);
 }
 
 .general-button
@@ -315,6 +337,11 @@ h3
     { 
         max-height: 120px;
     }
+
+    .row_flex
+    {
+        flex-direction: column;
+    }
 }
   
 @media (max-width: 800px) { 
@@ -355,6 +382,11 @@ h3
     #right_side > p {
         transform: translateY(0vw);
         margin: 10px 0;
+    }
+
+    .row_flex
+    {
+        margin-bottom: 0;
     }
 }
 
