@@ -6,13 +6,22 @@ import {Tags} from './Tags.js';
 class SoundZone extends React.Component {
   constructor(props) {
     super(props);
+    let temp_tags = [];
     let tags = [];
     for(let radio of radios.list)
         for(let tag of radio.tags)
-            if(tags.indexOf(tag)==-1)
-                tags.push(tag);
+            if(temp_tags.indexOf(tag)==-1)
+              temp_tags.push(tag);
 
-    tags.sort();
+    temp_tags.sort();
+
+    for(let tag of temp_tags)
+      if(tag.search(/[A-Z]{1}\/[A-Z]{1}\/[A-Z]{1}/g)!=-1)
+        tags.push(tag);
+    
+    for(let tag of temp_tags)
+      if(tags.indexOf(tag)==-1)
+        tags.push(tag);
 
     this.state = {
       tags: tags,
