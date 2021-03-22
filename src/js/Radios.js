@@ -69,7 +69,7 @@ class Radios extends React.Component {
             })()}
             </div>
             <div id="right_side">
-                <SearchBar change={(value) => this.setState({content:value})}/>
+                <SearchBar placeHolder="Name of a radio ..." change={(value) => this.setState({content:value})}/>
                 <div className="row_flex" >
                   <Nb_radios nb_radios={radios.length} />
                   {fav_button}

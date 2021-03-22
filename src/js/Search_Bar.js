@@ -14,8 +14,8 @@ class SearchBar extends React.Component {
 
   render() {
       return(
-        <div id="SearchBar">
-            <input onChange={event => this.props.change(event.target.value)} ref={this.inputText} type="text" id="radio_query" placeholder="Name of a radio..."></input>
+        <div className="SearchBar">
+            <input onChange={event => this.props.change(event.target.value)} ref={this.inputText} type="text" className="radio_query" placeholder={this.props.placeHolder}></input>
             <i onClick={() => this.setFocus()} className="fas fa-search"></i>
         </div>);
   }
