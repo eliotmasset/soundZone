@@ -17,7 +17,7 @@ class Tags extends React.Component {
     if (isclick && this.list_tag.current.style.height!="0px" && this.list_tag.current.style.height!="") {
         this.list_tag.current.style.height = "0px";
     } else {
-        this.list_tag.current.style.height = 40+this.innerList.current.clientHeight+ this.buttonSelectAll.current.clientHeight + "px";
+        this.list_tag.current.style.height = 40+this.innerList.current.clientHeight+ this.buttonSelectAll.current.clientHeight + 11 + "px";
     }
   }
 

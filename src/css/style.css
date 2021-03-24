@@ -256,6 +256,8 @@ h3
     float: left;
     transform: translateY(-20px);
     width: 100%;
+    margin-bottom: 6px;
+    box-sizing: border-box;
 }
 #tag_display:hover {
     background-color: rgb(214, 214, 214);
