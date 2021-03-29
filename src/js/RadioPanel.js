@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button_panel} from './Button_panel.js';
+import {Button_panel} from './button_panel.js';
 
 class RadioPanel extends React.Component {
 
