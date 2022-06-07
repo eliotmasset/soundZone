@@ -3,7 +3,7 @@
 </h1>
 
 <p align="center">
-    <a href="https://eliotmasset.fr/soundZone" >Voir la démo</a>
+    <a href="https://eliotmasset.fr/SoundZone" >Voir la démo</a>
     ·
     <a href="https://github.com/eliotmasset/soundZone/issues/new/choose">Reporter un Bug</a>
     ·
@@ -26,7 +26,7 @@ A travers cette plateforme, écoute les radios que tu souhaite quand tu le souha
 ## 🚀 Démo
 
 <a role="link" aria-disabled="true">
-  <img src="https://img.shields.io/website?url=https%3A%2F%2Feliotmasset.fr%2soundZone&logo=github&style=flat-square" />
+  <img src="https://img.shields.io/website?url=https%3A%2F%2Feliotmasset.fr%2SoundZone&logo=github&style=flat-square" />
 </a>
 
 ## 🧐 Fonctionnalités
@@ -94,7 +94,7 @@ Developpé en France 🇫🇷 !
 </h1>
 
 <p align="center">
-    <a href="https://eliotmasset.fr/soundZone" >Voir la démo</a>
+    <a href="https://eliotmasset.fr/SoundZone" >Voir la démo</a>
     ·
     <a href="https://github.com/eliotmasset/soundZone/issues/new/choose">Report a Bug</a>
     ·
@@ -117,7 +117,7 @@ By this Pokedex, browse the Ontologie of the fourth pokemon ontologie.
 ## 🚀 Demo
 
 <a role="link" aria-disabled="true">
-  <img src="https://img.shields.io/website?url=https%3A%2F%2Feliotmasset.fr%2soundZone&logo=github&style=flat-square" />
+  <img src="https://img.shields.io/website?url=https%3A%2F%2Feliotmasset.fr%2SoundZone&logo=github&style=flat-square" />
 </a>
 
 ## 🧐 Features
