@@ -25,7 +25,7 @@ A travers cette plateforme, écoute les radios que tu souhaite quand tu le souha
 
 ## 🚀 Démo
 
-<a role="link" aria-disabled="true">
+<a href="https://eliotmasset.fr/SoundZone">
   <img src="https://img.shields.io/website?url=https%3A%2F%2Feliotmasset.fr%2SoundZone&logo=github&style=flat-square" />
 </a>
 
@@ -116,7 +116,7 @@ By this Pokedex, browse the Ontologie of the fourth pokemon ontologie.
 
 ## 🚀 Demo
 
-<a role="link" aria-disabled="true">
+<a href="https://eliotmasset.fr/SoundZone">
   <img src="https://img.shields.io/website?url=https%3A%2F%2Feliotmasset.fr%2SoundZone&logo=github&style=flat-square" />
 </a>
 
