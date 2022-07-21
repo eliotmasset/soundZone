@@ -56,7 +56,7 @@ cd soundZone
 ```bash
 sudo apt update
 
-sudo apt-get install node npm
+sudo apt-get install nodejs npm
 
 npm install --save-dev webpack
 
@@ -147,7 +147,7 @@ cd soundZone
 ```bash
 sudo apt update
 
-sudo apt-get install node npm
+sudo apt-get install nodejs npm
 
 npm install --save-dev webpack
 
